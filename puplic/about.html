@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about Somafish, a seafood shop serving households and businesses in Mogadishu, Somalia.">
+  <title>About Us | Somafish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body class="about-page">
+  <!-- Small information bar -->
+  <div class="top-strip">
+    <div class="top-strip__inner">
+      <span>Mogadishu, Somalia</span>
+      <span>Seafood delivery across Mogadishu</span>
+    </div>
+  </div>
+
+  <!-- Page navigation: checkbox supplies a working mobile menu without JavaScript -->
+  <header class="about-header">
+    <div class="about-header__inner">
+      <a href="index.html" class="about-logo" aria-label="Somafish home">Somafish</a>
+      <input type="checkbox" id="mobile-menu" class="menu-checkbox" aria-label="Show navigation menu">
+      <label for="mobile-menu" class="menu-toggle" aria-hidden="true"><span></span><span></span><span></span></label>
+      <nav class="about-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About Us</a>
+        <a href="shop2.html">Shop</a>
+        <a href="index.html#business-title">Wholesale</a>
+        
+        <a href="#contact">Contact Us</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#business-title" class="header-action" aria-label="Explore seafood and shop">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
+        </a>
+        <a href="index.html#business-title" class="header-action" aria-label="Explore Somafish products">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1.3 12H5.3L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="about-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Our story</span>
+      </nav>
+
+      <!-- Large photo banner modeled on the screenshot's spacing and treatment -->
+      <section class="about-hero" aria-labelledby="story-title">
+        <div class="about-hero__content">
+          <p class="about-hero__eyebrow">OUR STORY · MOGADISHU</p>
+          <h1 id="story-title">Fresh from the sea,<br>made for Mogadishu</h1>
+          <p>Started by faisal in 1997, Somafish brings fresh, frozen and chilled seafood to families and kitchens across the city.</p>
+        </div>
+      </section>
+
+      <!-- Original Somafish information, presented below the hero -->
+      <section class="story-section" aria-labelledby="story-heading">
+        <div>
+          <p class="section-eyebrow">WHO WE ARE</p>
+          <h2 id="story-heading">Our roots are in the ocean.</h2>
+        </div>
+        <div class="story-section__copy">
+          <p>Somafish is an online seafood shop based in Mogadishu, Somalia. Our story began in 1997, with a simple idea: make good seafood easier to find and bring home.</p>
+          <p>Today, we serve households and businesses looking for fresh, frozen and chilled seafood, with care given to handling and delivery.</p>
+        </div>
+      </section>
+
+      <section class="about-values" aria-label="What we offer">
+        <article class="about-value"><div class="about-value__icon" aria-hidden="true">✦</div><h3>Seafood selection</h3><p>Fresh, frozen and chilled options for everyday meals and professional kitchens.</p></article>
+        <article class="about-value"><div class="about-value__icon" aria-hidden="true">⌂</div><h3>Local delivery</h3><p>Serving customers across Mogadishu, including Hodan and Wadajir.</p></article>
+        <article class="about-value"><div class="about-value__icon" aria-hidden="true">❄</div><h3>Cold-chain care</h3><p>Temperature-conscious handling from our facility to your doorstep.</p></article>
+      </section>
+      <section class="about-cta" aria-labelledby="about-cta-heading"><div><p class="section-eyebrow">SOMAFISH</p><h2 id="about-cta-heading">Seafood for your table.</h2><p>Explore what Somafish offers for homes, restaurants and businesses.</p></div><a href="index.html#business-title" class="about-cta__button">Explore Somafish <span aria-hidden="true">→</span></a></section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <a href="index.html" class="site-footer__logo">Somafish</a>
+        <p class="site-footer__tagline">If it swims, we have it.</p>
+        <address class="site-footer__contact">
+          <p class="site-footer__address">Mogadishu, Somalia</p>
+          <ul class="contact-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Monday to Friday, 8:00 AM to 6:00 PM</span></li></ul>
+        </address>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-shop-about"><h2 class="footer-col__title" id="footer-shop-about">Shop</h2><ul class="footer-col__list"><li><a href="index.html">Home</a></li><li><a href="index.html#business-title">Seafood</a></li></ul></nav>
+      <nav class="footer-col" aria-labelledby="footer-trade-about"><h2 class="footer-col__title" id="footer-trade-about">Trade</h2><ul class="footer-col__list"><li><a href="index.html#business-title">Wholesale</a></li><li><a href="index.html#business-title">Export</a></li></ul></nav>
+      <nav class="footer-col" aria-labelledby="footer-help-about"><h2 class="footer-col__title" id="footer-help-about">Help</h2><ul class="footer-col__list"><li><a href="about.html">About us</a></li><li><a href="index.html">Delivery information</a></li></ul></nav>
+    </div>
+    <div class="site-footer__bottom"><p class="site-footer__copyright">&copy; 2026 Somafish</p><p class="site-footer__payment">Secure payment · cards and mobile money</p></div>
+    <p class="photo-credit">Hero photograph: <a href="https://commons.wikimedia.org/wiki/File:Fresh_Fish_Varieties_on_Ice.jpg" rel="noopener noreferrer">Fresh Fish Varieties on Ice, Wikimedia Commons</a>. Replace with your own seafood photo when available.</p>
+  </footer>
+</body>
+</html>
