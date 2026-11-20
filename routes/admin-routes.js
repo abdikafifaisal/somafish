@@ -39,7 +39,17 @@ function adminFactory({Admin,Order,Product,Message,jwtSecret,uploadDir}){
  const secureCookie=process.env.NODE_ENV==='production';
  const cookieOpts={httpOnly:true,secure:secureCookie,sameSite:'strict',path:'/',maxAge:8*60*60*1000};
  const parseCookie=req=>{const header=req.headers.cookie||'';for(const entry of header.split(';')){const pos=entry.indexOf('=');if(pos<0)continue;if(entry.slice(0,pos).trim()===COOKIE)return decodeURIComponent(entry.slice(pos+1).trim());}return null;};
- const allowOrigin=(req,res,next)=>{if(['GET','HEAD','OPTIONS'].includes(req.method))return next();const origin=req.get('Origin');if(origin){try{if(new URL(origin).origin!==`${req.protocol}://${req.get('host')}`)return res.status(403).json({error:'Invalid request origin'});}catch{return res.status(403).json({error:'Invalid request origin'});}}next();};
+ const publicOrigin = process.env.RENDER_EXTERNAL_URL
+   ? new URL(process.env.RENDER_EXTERNAL_URL).origin
+   : null;
+ const allowOrigin = (req, res, next) => {
+  const origin = req.get('Origin');
+  if (['GET', 'HEAD', 'OPTIONS'].includes(req.method) || !origin) return next();
+  // Render terminates HTTPS before forwarding requests to Express.
+  const expectedOrigin = publicOrigin || `${req.protocol}://${req.get('host')}`;
+  if (origin !== expectedOrigin) return res.status(403).json({error:'Invalid request origin'});
+  next();
+ };
  router.use(allowOrigin);
  router.post('/login',loginLimiter,async(req,res,next)=>{try{const username=safeText(req.body?.username,80),password=req.body?.password;if(!username||typeof password!=='string'||password.length>200)return res.status(400).json({error:'Invalid credentials'});
   const a=await Admin.findOne({username}).select('+passwordHash +password');const hash=a?.passwordHash||a?.password;const ok=hash?await bcrypt.compare(password,hash):false;if(!a||!ok||a.isActive===false)return res.status(401).json({error:'Invalid username or password'});
